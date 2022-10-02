@@ -1,0 +1,129 @@
+@import "../../styles/mixins";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--colors-light-100);
+
+  &_main {
+    display: flex;
+    flex-flow: row wrap;
+
+    gap: 2rem;
+    padding-block: 2.5rem;
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      min-inline-size: 120px;
+
+      h6 {
+        margin-block-end: 1.25rem;
+        font-size: 17px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          display: -webkit-box;
+          padding-block: 6px;
+
+          font-weight: 400;
+          font-size: 13px;
+
+          transition: 250ms color var(--transition-curve);
+
+          @include hover {
+            color: rgb(var(--colors-red));
+            cursor: pointer;
+          }
+
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .social_media {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        gap: 1.5rem;
+        margin-block-end: 1.5rem;
+
+        li {
+          font-size: 18px;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+
+        margin-block-end: 0.75rem;
+      }
+
+      .search {
+        display: flex;
+        align-items: stretch;
+        flex: 1;
+
+        & input {
+          inline-size: 100%;
+          block-size: 52px;
+
+          border: 1px solid var(--colors-light-200);
+          background-color: #fff;
+          padding-inline: 1rem;
+
+          font-size: 14px;
+          font-weight: 400;
+
+          &:focus {
+            border-color: var(--colors-light-400);
+          }
+        }
+
+        & button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          border: none;
+          background-color: rgb(var(--colors-red));
+          color: #fff;
+          font-size: 20px;
+
+          inline-size: 60px;
+
+          transition: 250ms background-color var(--transition-curve);
+          will-change: background-color;
+
+          @include hover {
+            background-color: rgb(var(--colors-red-hover));
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: 0.5rem;
+    border-top: 1px solid var(--colors-light-200);
+
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

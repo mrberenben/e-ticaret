@@ -1,0 +1,262 @@
+@import "../../styles/_mixins";
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  // header top stripe
+  &_top {
+    background-color: var(--colors-light-100);
+
+    &_inner {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      inline-size: 100%;
+      block-size: 40px;
+
+      & .social_media {
+        display: flex;
+        align-items: center;
+
+        gap: 1rem;
+
+        & li {
+          display: flex;
+          color: var(--colors-dark-600);
+
+          transition: 250ms color var(--transition-curve);
+
+          @include hover {
+            color: var(--colors-dark-200);
+            cursor: pointer;
+          }
+        }
+      }
+
+      &_right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-size: 14px;
+          font-weight: 400;
+
+          &:last-child {
+            block-size: 40px;
+            padding-inline: 0.75rem;
+
+            background-color: rgb(var(--colors-red));
+            color: #fff;
+            font-weight: 600;
+
+            transition: 250ms background-color var(--transition-curve);
+            will-change: background-color;
+
+            @include hover {
+              background-color: rgb(var(--colors-red-hover));
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // main header
+  &_main {
+    background-color: #fff;
+
+    &_inner {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-block: 0.75rem;
+      gap: 1.5rem;
+
+      // left
+      & .logo {
+        display: flex;
+
+        inline-size: auto;
+        block-size: 64px;
+
+        @include breakpoint(xs) {
+          block-size: 42px;
+        }
+
+        & img {
+          inline-size: 100%;
+          block-size: 100%;
+        }
+      }
+
+      // middle
+      & .search {
+        display: flex;
+        align-items: stretch;
+        flex: 1;
+
+        max-inline-size: 640px;
+
+        @include breakpoint(xs) {
+          display: none;
+        }
+
+        & input {
+          inline-size: 100%;
+          block-size: 52px;
+
+          border: 1px solid var(--colors-light-200);
+          background-color: var(--colors-light-100);
+          padding-inline: 1rem;
+
+          font-size: 14px;
+          font-weight: 400;
+
+          &:focus {
+            border-color: var(--colors-light-400);
+          }
+        }
+
+        & button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          border: none;
+          background-color: rgb(var(--colors-red));
+          color: #fff;
+          font-size: 20px;
+
+          inline-size: 52px;
+
+          transition: 250ms background-color var(--transition-curve);
+          will-change: background-color;
+
+          @include hover {
+            background-color: rgb(var(--colors-red-hover));
+            cursor: pointer;
+          }
+        }
+      }
+
+      // right
+      & .auth {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        @include breakpoint(xs) {
+          gap: 0.5rem;
+        }
+
+        & .cta {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          gap: 1rem;
+          padding: 0.625rem 0.875rem 0.625rem 0.75rem;
+          border-radius: var(--radius-s);
+
+          transition: 250ms background-color var(--transition-curve);
+          will-change: background-color;
+
+          @include hover {
+            background-color: var(--colors-light-200);
+            cursor: pointer;
+          }
+
+          &_icon {
+            display: flex;
+            font-size: 26px;
+          }
+
+          &_text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            line-height: 1.25;
+
+            & small {
+              margin-inline-start: 1px;
+
+              font-size: 12px;
+              color: var(--colors-light-800);
+            }
+
+            @include breakpoint(sm) {
+              display: none;
+            }
+          }
+
+          @include hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    padding-block: 0.5rem 1rem;
+
+    .search {
+      display: flex;
+      align-items: stretch;
+      flex: 1;
+
+      inline-size: 100%;
+
+      & input {
+        inline-size: 100%;
+        block-size: 52px;
+
+        border: 1px solid var(--colors-light-200);
+        background-color: var(--colors-light-100);
+        padding-inline: 1rem;
+
+        font-size: 14px;
+        font-weight: 400;
+
+        &:focus {
+          border-color: var(--colors-light-400);
+        }
+      }
+
+      & button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        background-color: rgb(var(--colors-red));
+        color: #fff;
+        font-size: 20px;
+
+        inline-size: 52px;
+      }
+    }
+
+    @include breakpoint(xs) {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@import "../../styles/mixins";
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--colors-light-200);
+
+  transition: 250ms border-color var(--transition-curve);
+  will-change: border-color;
+  overflow: hidden;
+
+  @include hover {
+    border-color: var(--colors-light-500);
+    cursor: pointer;
+  }
+
+  &_image {
+    inline-size: 100%;
+    block-size: auto;
+
+    img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    .product_title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+
+      inline-size: 100%;
+      block-size: 39px;
+
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .product_price {
+      font-size: 17px;
+    }
+  }
+
+  &_actions {
+    position: absolute;
+    inset: 0;
+    top: initial;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 1rem 2rem;
+    background-color: #fff;
+
+    transform: scale(0);
+    transform-origin: bottom center;
+    transition: 250ms transform var(--transition-curve);
+    will-change: transform;
+
+    .top {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        inline-size: 2.5rem;
+        block-size: 2.5rem;
+
+        border-radius: var(--radius-rounded);
+        background-color: transparent;
+
+        font-size: 18px;
+
+        transition: 250ms background-color var(--transition-curve);
+        will-change: background-color;
+
+        @include hover {
+          background-color: var(--colors-light-200);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .bottom {
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        inline-size: 100%;
+        padding: 0.675rem 1rem;
+
+        background-color: rgb(var(--colors-red));
+        color: #fff;
+
+        font-size: 14px;
+        text-transform: uppercase;
+
+        transition: 250ms background-color var(--transition-curve);
+        will-change: background-color;
+
+        @include hover {
+          background-color: rgb(var(--colors-red-hover));
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include hover {
+    .product_actions {
+      transform: scale(1);
+    }
+  }
+}

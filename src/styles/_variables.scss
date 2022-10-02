@@ -1,0 +1,36 @@
+:root {
+  /* colors */
+  --colors-red: 254, 0, 1;
+  --colors-red-hover: 230, 0, 0;
+
+  --colors-dark-100: #1a1a1d;
+  --colors-dark-200: #212123;
+  --colors-dark-300: #29292c;
+  --colors-dark-400: #343437;
+  --colors-dark-500: #4a4b4c;
+  --colors-dark-600: #57585a;
+  --colors-dark-700: #66686a;
+  --colors-dark-800: #777676;
+
+  --colors-light-100: #fbfbfb;
+  --colors-light-200: #ebedf1;
+  --colors-light-300: #dddcdc;
+  --colors-light-400: #d3d2d2;
+  --colors-light-500: #b0b1b4;
+  --colors-light-600: #a1a3a5;
+  --colors-light-700: #909294;
+  --colors-light-800: #838484;
+  --colors-light-900: #78797a;
+
+  /* misc */
+  --radius-xs: 4px;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 32px;
+  --radius-rounded: 100%;
+
+  /* animations */
+  --transition-curve: cubic-bezier(0.62, 0.05, 0.01, 0.99);
+}

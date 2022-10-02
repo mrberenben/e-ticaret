@@ -1,0 +1,28 @@
+@import "../../styles/mixins";
+
+.breadcrumb {
+  position: relative;
+
+  inline-size: 100%;
+  block-size: 50px;
+
+  background-color: var(--colors-light-100);
+
+  & .breadcrumb_list {
+    display: flex;
+    align-items: center;
+
+    block-size: 100%;
+    gap: 0.25rem;
+
+    font-size: 14px;
+
+    & a:hover {
+      text-decoration: underline;
+    }
+
+    & li:not(:last-child) a {
+      color: var(--colors-dark-800);
+    }
+  }
+}
