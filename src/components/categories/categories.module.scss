@@ -146,12 +146,13 @@
       .categories_mobile {
         position: fixed;
         inset: 0;
-        top: 236px;
+        top: 158px;
+
         display: flex;
         flex-direction: column;
 
         inline-size: 100%;
-        block-size: calc(100% - 236px);
+        block-size: calc(100% - 158px);
 
         background-color: rgb(var(--colors-red));
         z-index: 99;
@@ -162,6 +163,11 @@
         transition: 650ms transform var(--transition-curve);
         transform-origin: top center;
         overflow: auto;
+
+        @include breakpoint(xs) {
+          top: 234px;
+          block-size: calc(100% - 234px);
+        }
 
         &__active {
           pointer-events: all;
